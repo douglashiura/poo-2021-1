@@ -1,4 +1,4 @@
-package com.ies.douglashiura.poo.teste;
+package com.ies.poo.douglashiura;
 
 import static org.junit.Assert.*;
 

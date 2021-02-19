@@ -1,4 +1,4 @@
-package com.ies.douglashiura.poo.teste;
+package com.ies.poo.douglashiura;
 
 import static org.junit.Assert.assertEquals;
 
@@ -14,7 +14,7 @@ public class TesteOsTiposPrimitivos {
 
 	@Test
 	public void umShort() throws Exception {
-		short umShort = 10000;
+		short umShort = 10;
 		assertEquals(10, umShort);
 	}
 
@@ -27,7 +27,7 @@ public class TesteOsTiposPrimitivos {
 
 	@Test
 	public void umFloat() throws Exception {
-		Float umFloat = 10000000000000.20000f;
+		Float umFloat = 10.2f;
 		assertEquals(Float.valueOf(10.2f), umFloat);
 	}
 
