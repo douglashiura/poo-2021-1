@@ -1,4 +1,4 @@
-package com.ies.poo.douglashiura.teste;
+package com.ies.poo.douglashiura.teste.animal;
 
 import static org.junit.Assert.assertEquals;
 

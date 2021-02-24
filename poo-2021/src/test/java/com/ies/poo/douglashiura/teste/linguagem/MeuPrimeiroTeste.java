@@ -1,4 +1,4 @@
-package com.ies.poo.douglashiura;
+package com.ies.poo.douglashiura.teste.linguagem;
 
 import static org.junit.Assert.*;
 
