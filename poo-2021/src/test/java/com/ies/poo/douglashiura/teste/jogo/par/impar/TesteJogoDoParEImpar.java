@@ -9,5 +9,10 @@ public class TesteJogoDoParEImpar {
 	@Test
 	public void oJogo() throws Exception {
 		fail();
+		
+		
+		
+		
+		
 	}
 }
