@@ -2,8 +2,18 @@ package com.ies.poo.douglashiura.jogo;
 
 public class Jogador {
 
-	public Jogador(String string) {
-		// TODO Auto-generated constructor stub
+	public String nome;
+
+	public Jogador(String nome) {
+		this.nome = nome;
+	}
+
+	public Jogador() {
+	}
+
+	public void fixarNome(String nome) {
+		this.nome = nome;
+		
 	}
 
 }

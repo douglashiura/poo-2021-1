@@ -24,8 +24,12 @@ public class TesteOJogoDoParEImpar {
 	@Before
 	public void configuracao() {
 		parEImpar = new JogoParEImpar();
-		lucas = new Jogador("Lucas");
+		lucas = new Jogador();
 		gustavo = new Jogador("Gustavo");
+		lucas.nome = "Lucas";
+		lucas.fixarNome("Lucas");
+		lucas.fixarNome("Lucas Dias");
+
 		doLucas = new Aposta(lucas, Numeros.IMPAR, 2);
 		doGustavo = new Jogada(gustavo, Numeros.PAR, 1);
 	}
