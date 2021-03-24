@@ -2,11 +2,11 @@ package com.ies.poo.douglashiura.jogo.pedra.papel.tesoura;
 
 import com.ies.poo.douglashiura.jogo.Jogador;
 
-public class JogadaDoPedraPapelTesoura {
+public class Jogada {
 
 	private OpcoesDoJogo opcao;
 
-	public JogadaDoPedraPapelTesoura(Jogador jogador, OpcoesDoJogo opcao) {
+	public Jogada(Jogador jogador, OpcoesDoJogo opcao) {
 		this.opcao = opcao;
 	}
 

@@ -8,7 +8,7 @@ public class JogoDaPedraPapelETesoura {
 	private OpcoesDoJogo opcaoVencedora;
 	private List<Regra> regras;
 
-	public JogoDaPedraPapelETesoura(JogadaDoPedraPapelTesoura aposta, JogadaDoPedraPapelTesoura contraAposta) {
+	public JogoDaPedraPapelETesoura(Jogada aposta, Jogada contraAposta) {
 		adicionaRegras();
 		verificaARegraVencedora(aposta, contraAposta);
 	}
@@ -21,7 +21,7 @@ public class JogoDaPedraPapelETesoura {
 		regras.add(pedraPapel);
 	}
 
-	private void verificaARegraVencedora(JogadaDoPedraPapelTesoura aposta, JogadaDoPedraPapelTesoura contraAposta) {
+	private void verificaARegraVencedora(Jogada aposta, Jogada contraAposta) {
 		for (Regra regra : regras) {
 			if (regra.ehRegraQueSeEncaixa(aposta.obterOpcao(), contraAposta.obterOpcao())) {
 				opcaoVencedora = regra.obterVencedor();
