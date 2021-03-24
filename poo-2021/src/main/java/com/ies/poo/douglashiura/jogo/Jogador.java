@@ -13,7 +13,6 @@ public class Jogador {
 
 	public void fixarNome(String nome) {
 		this.nome = nome;
-		
 	}
 
 }
