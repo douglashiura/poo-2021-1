@@ -1,0 +1,7 @@
+CREATE DATABASE nome_do_banco;
+
+CREATE TABLE Pessoa (
+	id SERIAL NOT NULL,
+	idade INTEGER, 
+	nome VARCHAR(255) NOT NULL
+);
