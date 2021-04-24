@@ -18,8 +18,14 @@ class FormatadorPlural implements Formatavel {
 	@Override
 	public String formatar() {
 		NumberFormat formatador = NumberFormat.getCurrencyInstance();
-		return esqueleto(umaNota -> String.format("%s cujo valor é %s", Integer.toString(umaNota.getCodigo()),
-				formatador.format(umaNota.getValor())));
+		String esqueleto = esqueleto(umaNota -> String.format("%s cujo valor é %s",
+				Integer.toString(umaNota.getCodigo()), formatador.format(umaNota.getValor())));
+
+		return esqueleto.concat(String.format(" Total = %s.", formatador.format(total())));
+	}
+
+	private Float total() {
+		return notas.stream().map(umaNota -> umaNota.getValor()).reduce(0f, Float::sum);
 	}
 
 	protected String esqueleto(Function<Nota, String> formatadorNota) {

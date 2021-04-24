@@ -59,14 +59,14 @@ public class TesteGeradorObservacaoDeNotas {
 
 	@Test
 	public void duasNotas() throws Exception {
-		assertEquals("Fatura das notas fiscais de simples remessa: 1 cujo valor é R$10.00 e 2 cujo valor é R$25.00.",
+		assertEquals("Fatura das notas fiscais de simples remessa: 1 cujo valor é R$10.00 e 2 cujo valor é R$25.00. Total = R$35.00.",
 				gerador.geraObservacaoDeNotas(Arrays.asList(notaDe10, notaDe20)));
 	}
 
 	@Test
 	public void tresNotas() throws Exception {
 		assertEquals(
-				"Fatura das notas fiscais de simples remessa: 1 cujo valor é R$10.00, 2 cujo valor é R$25.00 e 3 cujo valor é R$3,333.33.",
+				"Fatura das notas fiscais de simples remessa: 1 cujo valor é R$10.00, 2 cujo valor é R$25.00 e 3 cujo valor é R$3,333.33. Total = R$3,368.33.",
 				gerador.geraObservacaoDeNotas(Arrays.asList(notaDe10, notaDe20, notaDe30)));
 	}
 
