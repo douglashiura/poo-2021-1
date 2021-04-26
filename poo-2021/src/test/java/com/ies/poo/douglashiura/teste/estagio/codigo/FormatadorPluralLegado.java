@@ -2,7 +2,7 @@ package com.ies.poo.douglashiura.teste.estagio.codigo;
 
 import java.util.List;
 
-public class FormatadorPluralLegado extends FormatadorPlural {
+ class FormatadorPluralLegado extends FormatadorPlural {
 
 	FormatadorPluralLegado(List<Nota> notas) {
 		super(notas);

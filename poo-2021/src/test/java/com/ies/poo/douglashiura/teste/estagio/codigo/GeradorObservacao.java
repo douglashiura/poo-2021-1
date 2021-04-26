@@ -14,7 +14,6 @@ public class GeradorObservacao {
 	public String geraObservacao(List lista) {
 		Formatavel formatador = fabrica.obterInstanciaLegado(lista);
 		return formatador.formatar();
-
 	}
 
 	public String geraObservacaoDeNotas(List<Nota> notas) {

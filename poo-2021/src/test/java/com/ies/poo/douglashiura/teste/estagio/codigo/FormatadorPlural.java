@@ -18,9 +18,11 @@ class FormatadorPlural implements Formatavel {
 	@Override
 	public String formatar() {
 		NumberFormat formatador = NumberFormat.getCurrencyInstance();
-		String esqueleto = esqueleto(umaNota -> String.format("%s cujo valor é %s",
-				Integer.toString(umaNota.getCodigo()), formatador.format(umaNota.getValor())));
-
+		Function<Nota, String> formatadorDeNota = umaNota -> {
+			String valor = formatador.format(umaNota.getValor());
+			return String.format("%s cujo valor é %s", umaNota.getCodigo(), valor);
+		};
+		String esqueleto = esqueleto(formatadorDeNota);
 		return esqueleto.concat(String.format(" Total = %s.", formatador.format(total())));
 	}
 
@@ -28,20 +30,17 @@ class FormatadorPlural implements Formatavel {
 		return notas.stream().map(umaNota -> umaNota.getValor()).reduce(0f, Float::sum);
 	}
 
-	protected String esqueleto(Function<Nota, String> formatadorNota) {
+	protected String esqueleto(Function<Nota, String> formatadorDeNota) {
 		StringBuilder texto = new StringBuilder();
 		texto.append(DUAS_OU_MAIS_NOTAS);
 		for (int indice = 0; indice < notas.size(); indice++) {
 			Nota umaNota = notas.get(indice);
-			if (ehOPrimeiro(indice)) {
-				texto.append(formatadorNota.apply(umaNota));
-			} else if (ehOUltimo(indice)) {
+			if (ehOUltimo(indice)) {
 				texto.append(E_DE_LIGACAO);
-				texto.append(formatadorNota.apply(umaNota));
-			} else {
+			} else if (naoEhOPrimeiro(indice)) {
 				texto.append(VIRGULA_DE_LIGACAO);
-				texto.append(formatadorNota.apply(umaNota));
 			}
+			texto.append(formatadorDeNota.apply(umaNota));
 		}
 		texto.append(PONTO);
 		return texto.toString();
@@ -51,8 +50,8 @@ class FormatadorPlural implements Formatavel {
 		return index + 1 == notas.size();
 	}
 
-	private boolean ehOPrimeiro(int index) {
-		return index == 0;
+	private boolean naoEhOPrimeiro(int index) {
+		return index != 0;
 	}
 
 }
