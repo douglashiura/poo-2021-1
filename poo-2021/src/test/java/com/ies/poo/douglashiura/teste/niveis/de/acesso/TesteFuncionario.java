@@ -7,10 +7,9 @@ import com.ies.poo.douglashiura.Funcionario;
 public class TesteFuncionario {
 
 	@Test
-	public void aumentarSalario() throws Exception {
+	public void aumentarSalario() throws RuntimeException {
 		Funcionario douglas = new Funcionario();
-		douglas.fixarSalario(28) ;
+		douglas.fixarSalario(28);
 		douglas.aumentarSalarioEm(50);
 	}
-
 }
