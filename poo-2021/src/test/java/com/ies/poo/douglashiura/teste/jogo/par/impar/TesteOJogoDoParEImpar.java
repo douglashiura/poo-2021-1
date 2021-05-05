@@ -39,7 +39,7 @@ public class TesteOJogoDoParEImpar {
 		parEImpar.adicionarAcao(doLucas);
 		parEImpar.adicionarAcao(doGustavo);
 		ResultadoVencedor resultado = parEImpar.obterResultado();
-		assertEquals(Numeros.IMPAR, resultado.obterResultadoEsperadoVencedor());
+		assertEquals(Numeros.IMPAR, resultado.obterResultadoVencedor());
 		assertEquals(lucas, resultado.obterJogadorVencedor());
 		assertNotNull(lucas);
 	}
@@ -50,7 +50,7 @@ public class TesteOJogoDoParEImpar {
 		parEImpar.adicionarAcao(doLucas);
 		parEImpar.adicionarAcao(doGustavo);
 		ResultadoVencedor resultado = parEImpar.obterResultado();
-		assertEquals(Numeros.PAR, resultado.obterResultadoEsperadoVencedor());
+		assertEquals(Numeros.PAR, resultado.obterResultadoVencedor());
 		assertEquals(gustavo, resultado.obterJogadorVencedor());
 	}
 

@@ -10,7 +10,7 @@ public class ResultadoVencedor {
 		this.jogadorVencedor = jogadorVencedor;
 	}
 
-	public Object obterResultadoEsperadoVencedor() {
+	public Object obterResultadoVencedor() {
 		return resultadoEsperadoPeloJogador;
 	}
 

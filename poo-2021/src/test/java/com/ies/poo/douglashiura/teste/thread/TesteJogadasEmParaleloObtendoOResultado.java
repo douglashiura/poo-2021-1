@@ -40,7 +40,7 @@ public class TesteJogadasEmParaleloObtendoOResultado {
 		lucasEmParalelo.start();
 		gustavoEmParalelo.start();
 		ResultadoVencedor resultado = parEImpar.obterResultado();
-		assertEquals(Numeros.IMPAR, resultado.obterResultadoEsperadoVencedor());
+		assertEquals(Numeros.IMPAR, resultado.obterResultadoVencedor());
 		lucasEmParalelo.join();
 		gustavoEmParalelo.join();
 	}
@@ -63,7 +63,7 @@ public class TesteJogadasEmParaleloObtendoOResultado {
 		@Override
 		public void run() {
 			ResultadoVencedor resultado = parEImpar.obterResultado();
-			assertEquals(Numeros.IMPAR, resultado.obterResultadoEsperadoVencedor());
+			assertEquals(Numeros.IMPAR, resultado.obterResultadoVencedor());
 
 		}
 
