@@ -5,7 +5,7 @@ public class JogoParEImpar {
 	private Acao primeiraAcao;
 	private Acao segundaAcao;
 
-	public void adicionarAcao(Acao doJogador) {
+	public synchronized void adicionarAcao(Acao doJogador) {
 		if (primeiraAcao == null) {
 			primeiraAcao = doJogador;
 		} else {
@@ -14,9 +14,7 @@ public class JogoParEImpar {
 	}
 
 	public ResultadoVencedor obterResultado() {
-		if (segundaAcao == null) {
-			return null;
-		}
+		dormeAteExistirASegundaJogada();
 		Integer somatorio = Integer.sum(primeiraAcao.obterEntrada(), segundaAcao.obterEntrada());
 		Boolean ehPar = ehPar(somatorio);
 		Jogador jogadorVencedor = null;
@@ -27,6 +25,17 @@ public class JogoParEImpar {
 			jogadorVencedor = encontrarOJogadorQueFezAApostaImpar();
 			return new ResultadoVencedor(Numeros.IMPAR, jogadorVencedor);
 		}
+	}
+
+	private void dormeAteExistirASegundaJogada() {
+		while (segundaAcao == null) {
+			try {
+				Thread.sleep(1);
+			} catch (InterruptedException e) {
+				throw new RuntimeException(e);
+			}
+		}
+
 	}
 
 	private Boolean ehPar(Integer somatorio) {

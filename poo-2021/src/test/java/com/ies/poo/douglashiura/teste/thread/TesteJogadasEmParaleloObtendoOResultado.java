@@ -40,9 +40,10 @@ public class TesteJogadasEmParaleloObtendoOResultado {
 		lucasEmParalelo.start();
 		gustavoEmParalelo.start();
 		ResultadoVencedor resultado = parEImpar.obterResultado();
-		assertEquals(Numeros.IMPAR, resultado.obterResultadoVencedor());
+		
 		lucasEmParalelo.join();
 		gustavoEmParalelo.join();
+		assertEquals(Numeros.IMPAR, resultado.obterResultadoVencedor());
 	}
 
 	@Test
